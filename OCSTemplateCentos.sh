@@ -47,10 +47,10 @@ rpm -Uvh epel-release-6-8.noarch.rpm
 rpm -Uvh remi-release-6.rpm
 
 if [ "$OS" == "x86_64" ]; then
-  wget https://raw.githubusercontent.com/Mhuradz143/OCSPanelCentos6/master/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm
+  wget https://raw.githubusercontent.com/Mhuradz/OCSPanelCentos6-master/master/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm
   rpm -Uvh rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm
 else
-  wget https://raw.githubusercontent.com/Mhuradz143/OCSPanelCentos6/master/rpmforge-release-0.5.3-1.el6.rf.i686.rpm
+  wget https://raw.githubusercontent.com/Mhuradz/OCSPanelCentos6-master/master/rpmforge-release-0.5.3-1.el6.rf.i686.rpm
   rpm -Uvh rpmforge-release-0.5.3-1.el6.rf.i686.rpm
 fi
 
@@ -126,7 +126,7 @@ service nginx restart
 #Install zip Mhuradz Script
 yum -y install zip unzip
 cd /home/vps/public_html
-wget https://raw.githubusercontent.com/Mhuradz143/OCSPanelCentos6/master/MhuradzOCSTemplate.zip
+wget https://raw.githubusercontent.com/Mhuradz/OCSPanelCentos6-master/master/MhuradzOCSTemplate.zip
 unzip MhuradzOCSTemplate.zip
 rm -f MhuradzOCSTemplate.zip
 chown -R nginx:nginx /home/vps/public_html
