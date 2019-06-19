@@ -1,6 +1,6 @@
 # CENTOS 6 OCS PANEL AND VPS AUTOSCRIPT
 
-OCSPANELCENTOS6 is made by Shigeno to minimize the time consumed and user involvement in setting up your VPS and OCS Panel
+OCSPANELCENTOS6 is made by RadzVPN to minimize the time consumed and user involvement in setting up your VPS and OCS Panel
 
 
 ### How to Use the OCSPanelCentos6 AutoScript
@@ -19,7 +19,7 @@ FOR VPS ONLY
 
 ### Commands
 ```
-yum -y update && yum -y install wget && wget https://raw.com/Mhuradz/OCSPanelCentos6-master/blob/master/VPSCentos6.sh && chmod +x VPSCentos6.sh && ./VPSCentos6.sh && rm -f VPSCentos6.sh && history -c
+yum -y update && yum -y install wget && wget https://raw.githubusercontent.com/Mhuradz/OCSPanelCentos6/master/VPSCentos6.sh && chmod +x VPSCentos6.sh && ./VPSCentos6.sh && rm -f VPSCentos6.sh && history -c
 ```
 
 FOR OCS PANEL AND VPS
