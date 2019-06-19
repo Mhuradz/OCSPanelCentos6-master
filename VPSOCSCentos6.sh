@@ -38,7 +38,7 @@ echo ""
 echo ""
 echo "Configure Database OCS Panel Name"
 echo "(Make sure the database name contains no spaces, symbols, or special characters.)"
-read -p "Database Name    : " -e -i OCSMhuradz NamaDatabase
+read -p "Database Name    : " -e -i OCSRadzVPN NamaDatabase
 echo "Input MySQL Password:"
 echo "(Use different Password for your database, dont use VPS password.)"
 read -p "Database Password: " -e -i RadzVPN PasswordDatabase
