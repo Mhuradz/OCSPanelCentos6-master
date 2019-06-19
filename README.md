@@ -19,7 +19,7 @@ FOR VPS ONLY
 
 ### Commands
 ```
-yum -y update && yum -y install wget && wget https://raw.githubusercontent.com/Mhuradz/OCSPanelCentos6/master/VPSCentos6.sh && chmod +x VPSCentos6.sh && ./VPSCentos6.sh && rm -f VPSCentos6.sh && history -c
+yum -y update && yum -y install wget && wget https://raw.githubusercontent.com/Mhuradz/OCSPanelCentos6-master/master/VPSCentos6.sh && chmod +x VPSCentos6.sh && ./VPSCentos6.sh && rm -f VPSCentos6.sh && history -c
 ```
 
 FOR OCS PANEL AND VPS
