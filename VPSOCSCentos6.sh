@@ -550,7 +550,7 @@ echo "   - MRTG                    : http://$MYIP:85/mrtg/"  | tee -a log-instal
 echo "   - Installation Log        : cat /root/log-install.txt"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "----------- Script Created By Steven Indarto(fb.com/stevenindarto2) ------------"
-echo "------------------------------ Modified by shigeno -----------------------------"
+echo "------------------------------ Modified by RadzVPN -----------------------------"
 
 # info
 clear
@@ -566,7 +566,7 @@ echo "Installatin Log: /root/log-install-ocspanel.txt" 				| tee -a log-install-
 echo "--------------------------------------------------------------------------------"| tee -a log-install-ocspanel.txt
 echo "Copyright https://www.HostingTermurah.net"  						| tee -a log-install-ocspanel.txt
 echo "Script Created By Steven Indarto(fb.com/stevenindarto2)"   		| tee -a log-install-ocspanel.txt
-echo "Modified by shigeno"                      	                 	| tee -a log-install-ocspanel.txt
+echo "Modified by RadzVPN"                      	                 	| tee -a log-install-ocspanel.txt
 echo "--------------------------------------------------------------------------------"| tee -a log-install-ocspanel.txt
 echo ""
 echo ""
