@@ -41,7 +41,7 @@ echo "(Make sure the database name contains no spaces, symbols, or special chara
 read -p "Database Name    : " -e -i OCSMhuradz NamaDatabase
 echo "Input MySQL Password:"
 echo "(Use different Password for your database, dont use VPS password.)"
-read -p "Database Password: " -e -i Mhuradz PasswordDatabase
+read -p "Database Password: " -e -i RadzVPN PasswordDatabase
 echo ""
 echo "All questions have been answered."
 read -n1 -r -p "Press any key to continue ..."
@@ -57,10 +57,10 @@ rpm -Uvh epel-release-6-8.noarch.rpm
 rpm -Uvh remi-release-6.rpm
 
 if [ "$OS" == "x86_64" ]; then
-  wget https://raw.githubusercontent.com/Mhuradz143/OCSPanelCentos6/master/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm
+  wget https://raw.githubusercontent.com/Mhuradz/OCSPanelCentos6-master/master/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm
   rpm -Uvh rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm
 else
-  wget https://raw.githubusercontent.com/Mhuradz143/OCSPanelCentos6/master/rpmforge-release-0.5.3-1.el6.rf.i686.rpm
+  wget https://raw.githubusercontent.com/Mhuradz/OCSPanelCentos6-master/master/rpmforge-release-0.5.3-1.el6.rf.i686.rpm
   rpm -Uvh rpmforge-release-0.5.3-1.el6.rf.i686.rpm
 fi
 
@@ -113,8 +113,8 @@ yum -y install nginx php php-fpm php-cli php-mysql php-mcrypt
 rm -f /usr/share/nginx/html/index.html
 mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.backup
 mv /etc/nginx/conf.d/vps.conf /etc/nginx/conf.d/vps.conf.backup
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/Mhuradz143/OCSPanelCentos6/master/nginx.conf"
-wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/Mhuradz143/OCSPanelCentos6/master/vps.conf"
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/Mhuradz/OCSPanelCentos6-master/master/nginx.conf"
+wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/Mhuradz/OCSPanelCentos6-master/master/vps.conf"
 sed -i 's/www-data/nginx/g' /etc/nginx/nginx.conf
 sed -i 's/apache/nginx/g' /etc/php-fpm.d/www.conf
 sed -i 's/cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php.ini
@@ -136,7 +136,7 @@ service nginx restart
 #Install zip Mhuradz Script
 yum -y install zip unzip
 cd /home/vps/public_html
-wget https://raw.githubusercontent.com/Mhuradz143/OCSPanelCentos6/master/OCSPanelCentos6.zip
+wget https://raw.githubusercontent.com/Mhuradz/OCSPanelCentos6-master/master/OCSPanelCentos6.zip
 unzip OCSPanelCentos6.zip
 rm -f OCSPanelCentos6.zip
 chown -R nginx:nginx /home/vps/public_html
@@ -220,7 +220,7 @@ chkconfig vnstat on
 
 # install screenfetch
 cd
-wget -O /usr/bin/screenfetch "https://raw.githubusercontent.com/Mhuradz143/OCSPanelCentos6/master/screenfetch"
+wget -O /usr/bin/screenfetch "https://raw.githubusercontent.com/Mhuradz/OCSPanelCentos6-master/master/screenfetch"
 chmod +x /usr/bin/screenfetch
 echo "clear" >> .bash_profile
 echo "screenfetch" >> .bash_profile
@@ -290,9 +290,9 @@ mkdir /var/lib/premium-script
 chkconfig pptpd on
 
 # install badvpn
-wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/Mhuradz143/OCSPanelCentos6/master/badvpn-udpgw"
+wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/Mhuradz/OCSPanelCentos6-master/master/badvpn-udpgw"
 if [ "$OS" == "x86_64" ]; then
-  wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/Mhuradz143/OCSPanelCentos6/master/badvpn-udpgw64"
+  wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/Mhuradz/OCSPanelCentos6-master/master/badvpn-udpgw64"
 fi
 sed -i '$ i\screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300' /etc/rc.local
 sed -i '$ i\screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300' /etc/rc.d/rc.local
@@ -301,7 +301,7 @@ screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300
 
 # setting banner
 rm /etc/issue.net
-wget -O /etc/issue.net "https://raw.githubusercontent.com/Mhuradz143/OCSPanelCentos6/master/issue.net"
+wget -O /etc/issue.net "https://raw.githubusercontent.com/Mhuradz/OCSPanelCentos6-master/master/issue.net"
 sed -i 's@#Banner@Banner@g' /etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 service ssh restart
@@ -309,15 +309,15 @@ service dropbear restart
 
 # install mrtg
 cd /etc/snmp/
-wget -O /etc/snmp/snmpd.conf "https://raw.githubusercontent.com/Mhuradz143/OCSPanelCentos6/master/snmpd.conf"
-wget -O /root/mrtg-mem.sh "https://raw.githubusercontent.com/Mhuradz143/OCSPanelCentos6/master/mrtg-mem.sh"
+wget -O /etc/snmp/snmpd.conf "https://raw.githubusercontent.com/Mhuradz/OCSPanelCentos6-master/master/snmpd.conf"
+wget -O /root/mrtg-mem.sh "https://raw.githubusercontent.com/Mhuradz/OCSPanelCentos6-master/master/mrtg-mem.sh"
 chmod +x /root/mrtg-mem.sh
 service snmpd restart
 chkconfig snmpd on
 snmpwalk -v 1 -c public localhost | tail
 mkdir -p /home/vps/public_html/mrtg
 cfgmaker --zero-speed 100000000 --global 'WorkDir: /home/vps/public_html/mrtg' --output /etc/mrtg/mrtg.cfg public@localhost
-curl "https://raw.githubusercontent.com/Mhuradz143/OCSPanelCentos6/master/mrtg.conf" >> /etc/mrtg.cfg
+curl "https://raw.githubusercontent.com/Mhuradz/OCSPanelCentos6-master/master/mrtg.conf" >> /etc/mrtg.cfg
 sed -i 's/WorkDir: \/var\/www\/mrtg/# WorkDir: \/var\/www\/mrtg/g' /etc/mrtg/mrtg.cfg
 sed -i 's/# Options\[_\]: growright, bits/Options\[_\]: growright/g' /etc/mrtg/mrtg.cfg
 indexmaker --output=/home/vps/public_html/mrtg/index.html /etc/mrtg/mrtg.cfg
@@ -343,7 +343,7 @@ chkconfig dropbear on
 
 # install vnstat gui
 cd /home/vps/public_html/
-wget https://raw.githubusercontent.com/Mhuradz143/OCSPanelCentos6/master/vnstat_php_frontend-1.5.1.tar.gz
+wget https://raw.githubusercontent.com/Mhuradz/OCSPanelCentos6-master/master/vnstat_php_frontend-1.5.1.tar.gz
 tar xf vnstat_php_frontend-1.5.1.tar.gz
 rm vnstat_php_frontend-1.5.1.tar.gz
 mv vnstat_php_frontend-1.5.1 vnstat
@@ -408,8 +408,8 @@ chkconfig squid on
 
 # install stunnel
 yum install stunnel
-wget -O /etc/pki/tls/certs/stunnel.pem "https://raw.githubusercontent.com/Mhuradz143/OCSPanelCentos6/master/stunnel.pem"
-wget -O /etc/stunnel/stunnel.conf "https://raw.githubusercontent.com/Mhuradz143/OCSPanelCentos6/master/stunnel.conf"
+wget -O /etc/pki/tls/certs/stunnel.pem "https://raw.githubusercontent.com/Mhuradz/OCSPanelCentos6-master/master/stunnel.pem"
+wget -O /etc/stunnel/stunnel.conf "https://raw.githubusercontent.com/Mhuradz/OCSPanelCentos6-master/master/stunnel.conf"
 mkdir /var/run/stunnel
 chown nobody:nobody /var/run/stunnel
 stunnel /etc/stunnel/stunnel.conf
@@ -470,7 +470,7 @@ yum -y install bmon
 
 # download script
 cd
-wget https://raw.githubusercontent.com/Mhuradz143/OCSPanelCentos6/master/install-premiumscript.sh -O - -o /dev/null|sh
+wget https://raw.githubusercontent.com/Mhuradz/OCSPanelCentos6-master/master/install-premiumscript.sh -O - -o /dev/null|sh
 
 # cron
 service crond start
@@ -508,7 +508,7 @@ echo "--------------------------- Setup Server Information ---------------------
 echo "                         Copyright HostingTermurah.net                          "
 echo "                        https://www.hostingtermurah.net                         "
 echo "               Created By Steven Indarto(fb.com/stevenindarto2)                 "
-echo "                              Modified by Mhuradz                               "
+echo "                              Modified by RadzVPN                              "
 echo "--------------------------------------------------------------------------------"
 echo ""  | tee -a log-install.txt
 echo "Server Included"  | tee -a log-install.txt
