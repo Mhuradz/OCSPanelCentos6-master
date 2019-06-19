@@ -188,7 +188,7 @@ wget -O /etc/openvpn/1194.conf "https://raw.githubusercontent.com/Mhuradz/OCSPan
 if [ "$OS" == "x86_64" ]; then
   wget -O /etc/openvpn/1194.conf "https://raw.githubusercontent.com/Mhuradz/OCSPanelCentos6-master/master/1194-centos64.conf"
 fi
-wget -O /etc/iptables.up.rules "https://raw.githubusercontent.com/Mhuradz/OCSPanelCentos6imaster/master/iptables.up.rules"
+wget -O /etc/iptables.up.rules "https://raw.githubusercontent.com/Mhuradz/OCSPanelCentos6i-master/master/iptables.up.rules"
 sed -i '$ i\iptables-restore < /etc/iptables.up.rules' /etc/rc.local
 sed -i '$ i\iptables-restore < /etc/iptables.up.rules' /etc/rc.d/rc.local
 MYIP=`dig +short myip.opendns.com @resolver1.opendns.com`;
