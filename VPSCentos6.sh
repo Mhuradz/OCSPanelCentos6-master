@@ -454,9 +454,9 @@ echo "INSTALLATION COMPLETE!"
 echo " "
 echo "--------------------------- Setup Server Information ---------------------------"
 echo "                         Copyright HostingTermurah.net                          "
-echo "                        https://www.hostingtermurah.net                         "
-echo "               Created By Steven Indarto(fb.com/stevenindarto2)                 "
-echo "                              Modified by shigeno                               "
+echo "                        https://www.radzvpn.ml                                  "
+echo "                                (fb.com/RADZVPN)                                "
+echo "                              Modified by RadzVPN                               "
 echo "--------------------------------------------------------------------------------"
 echo ""  | tee -a log-install.txt
 echo "Server Included"  | tee -a log-install.txt
@@ -498,4 +498,4 @@ echo "   - MRTG                    : http://$MYIP:85/mrtg/"  | tee -a log-instal
 echo "   - Installation Log        : cat /root/log-install.txt"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "----------- Script Created By Steven Indarto(fb.com/stevenindarto2) ------------"
-echo "------------------------------ Modified by shigeno -----------------------------"
+echo "------------------------------ Modified by RadzVPN -----------------------------"
